@@ -20,12 +20,17 @@
                     <div class="card-text mb-2">
                         <%= article.description %>
                     </div>
+                    <a href="articles/<%= article.slug %>" class="btn btn-primary">Read More</a>
+                    <a href="articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
+                    <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
                 </div>
             </div>
         <% }) %>
 
         <form action="/logout?_method=DELETE" method="POST">
-            <button type="submit" class="btn btn-danger mt-4">Logout</button>
+            <button type="submit" class="btn btn-warning mt-4">Logout</button>
         </form>
     </div>
 </body>

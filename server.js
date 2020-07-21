@@ -17,7 +17,8 @@ const Article = require('./models/article')
 mongoose.connect('mongodb://localhost/mikalog',
     {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useCreateIndex: true
     }
 )
 
@@ -53,7 +54,7 @@ app.use(methodOverride('_method'))
 
 // Admin Home route
 app.get('/articles', checkAuthenticated, async (req, res) => {
-    const articles = await Article.find()
+    const articles = await Article.find().sort({ createdAt: 'desc' })
     res.render('admin/index', { articles: articles })
 })
 
