@@ -1,0 +1,41 @@
+header {
+    height: 70px;
+    box-shadow: 0 0 3px 0 $color1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $color4;
+    .container {
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        .header-left {
+            img {
+                width: 60px;
+            }
+        }
+        .header-right {
+            button {
+                padding: 10px 30px;
+                background-color: $color3;
+                border-radius: 20px;
+                margin-left: 10px;
+                font-size: 16px;
+                font-weight: bold;
+                a {
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+                &:hover {
+                    background-color: $color2;
+                    color: $color4;
+                    a {
+                        color: $color4;
+                    }
+                }
+            }
+        }
+    }
+}

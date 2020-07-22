@@ -4,23 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mikalog | Login</title>
+    <link rel="stylesheet" href="dist/css/app.css">
 </head>
 <body>
-    <h1>Login</h1>
-    <% if (messages.error) { %>
-        <%= messages.error %>
-    <% } %>
-    <form action="/login" method="POST">
-        <div>
-            <label for="email">Email</label>
-            <input required type="email" id="email" name="email">
+    <header>
+        <div class="container flex">
+            <div class="header-left">
+                <a href="/"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ffiles.softicons.com%2Fdownload%2Fapplication-icons%2Forb-icons-by-deleket%2Fpng%2F300x300%2FBlogger.png&f=1&nofb=1" alt="logo"></a>
+            </div>
+            <div class="header-right">
+                <button><a href="/register">Register</a></button>
+            </div>
         </div>
-        <div>
-            <label for="password">Password</label>
-            <input required type="password" id="password" name="password">
+    </header>
+    <main>
+        <div class="container">
+            <h1>Login</h1>
+            <% if (messages.error) { %>
+                <%= messages.error %>
+            <% } %>
+            <div class="card-auth">
+                <form action="/login" method="POST">
+                    <div>
+                        <label for="email">Email</label>
+                        <input required type="email" id="email" name="email">
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input required type="password" id="password" name="password">
+                    </div>
+                    <div class="form-button">
+                        <button type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <button type="submit">Login</button>
-    </form>
-    <a href="/register">Register</a>
+    </main>
 </body>
 </html>

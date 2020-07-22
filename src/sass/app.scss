@@ -1,0 +1,20 @@
+// Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:ital,wght@1,900');
+
+// Variables
+@import '_variables';
+
+// Reset
+@import '_reset';
+
+// Common
+@import '_common';
+
+// Header
+@import 'partials/_header';
+
+// Main
+@import 'partials/_main';
+
+// Media Queries
+@import '_media';

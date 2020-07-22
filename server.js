@@ -33,7 +33,7 @@ initializePassport(
 const users = [
     {
         id: Date.now().toString(),
-        name: 'luigi',
+        name: 'Luigi',
         email: 'w@w',
         password: '$2b$10$n5AsNCulOBhLdSjcKQ9pHeUXIeVwnk.NaZMr2oR6.HDiPnVkwmk0W'
     }
@@ -52,6 +52,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(methodOverride('_method'))
 app.use('/articles', articleRouter)
+app.use('/dist/css', express.static('dist/css'))
 
 // Admin Home Route
 app.get('/articles', checkAuthenticated, async (req, res) => {

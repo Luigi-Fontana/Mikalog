@@ -1,0 +1,99 @@
+main {
+    margin-top: 70px;
+    padding: 0 200px;
+    .card {
+        margin: 30px 0;
+        background-color: $color4;
+        padding: 30px;
+        box-shadow: 0 0 2px 0 $color2;
+        small {
+            display: block;
+            padding-bottom: 20px;
+            color: $color3;
+        }
+        &:hover {
+            box-shadow: 0 0 3px 3px $color2;
+            cursor: pointer;
+        }
+    }
+    .card-auth {
+        width: 50%;
+        margin: 0 auto;
+        background-color: $color4;
+        padding: 30px;
+        box-shadow: 0 0 2px 0 $color1;
+        border-radius: 20px;
+        label {
+            display: block;
+            padding-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 5px 20px;
+        }
+        .form-button {
+            text-align: center;
+            button {
+                padding: 10px 30px;
+                background-color: $color3;
+                border-radius: 20px;
+                font-size: 16px;
+                font-weight: bold;
+                margin-top: 20px;
+                &:hover {
+                    background-color: $color2;
+                    color: $color4;
+                }
+            }
+        }
+    }
+    .btn {
+        padding: 5px 10px;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: transparent;
+        a {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        &:hover {
+            color: white;
+            a {
+                color: white;
+            }
+        }
+    }
+    .btn-new:hover {
+        background-color: green;
+    }
+    .btn-show:hover {
+        background-color: grey;
+    }
+    .btn-edit:hover {
+        background-color: blue;
+    }
+    .btn-delete:hover {
+        background-color: red;
+    }
+    table {
+        thead {
+            background-color: grey;
+            color: white;
+            th {
+                padding: 10px 0;
+            }
+        }
+        tbody {
+            font-size: 14px;
+            tr {
+                td {
+                    padding: 5px;
+                }
+                &:nth-child(odd) {
+                    background-color: $color4;
+                }
+            }
+        }
+    }
+}

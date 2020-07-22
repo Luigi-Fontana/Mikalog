@@ -1,0 +1,255 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito:ital,wght@1,900);* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+* {
+  font-family: Nunito, sans-serif;
+  letter-spacing: 1px;
+}
+
+button {
+  border-radius: 5px;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 900;
+  color: darkorange;
+  letter-spacing: 2px;
+  padding: 50px 0;
+}
+
+h2 {
+  font-size: 25px;
+  padding-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 1px solid darkorange;
+}
+
+h3 {
+  font-size: 16px;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
+p {
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+header {
+  height: 70px;
+  box-shadow: 0 0 3px 0 black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: whitesmoke;
+}
+
+header .container {
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+header .container .header-left img {
+  width: 60px;
+}
+
+header .container .header-right button {
+  padding: 10px 30px;
+  background-color: darkorange;
+  border-radius: 20px;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+header .container .header-right button a {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+header .container .header-right button:hover {
+  background-color: grey;
+  color: whitesmoke;
+}
+
+header .container .header-right button:hover a {
+  color: whitesmoke;
+}
+
+main {
+  margin-top: 70px;
+  padding: 0 200px;
+}
+
+main .card {
+  margin: 30px 0;
+  background-color: whitesmoke;
+  padding: 30px;
+  box-shadow: 0 0 2px 0 grey;
+}
+
+main .card small {
+  display: block;
+  padding-bottom: 20px;
+  color: darkorange;
+}
+
+main .card:hover {
+  box-shadow: 0 0 3px 3px grey;
+  cursor: pointer;
+}
+
+main .card-auth {
+  width: 50%;
+  margin: 0 auto;
+  background-color: whitesmoke;
+  padding: 30px;
+  box-shadow: 0 0 2px 0 black;
+  border-radius: 20px;
+}
+
+main .card-auth label {
+  display: block;
+  padding-bottom: 5px;
+}
+
+main .card-auth input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 5px 20px;
+}
+
+main .card-auth .form-button {
+  text-align: center;
+}
+
+main .card-auth .form-button button {
+  padding: 10px 30px;
+  background-color: darkorange;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+main .card-auth .form-button button:hover {
+  background-color: grey;
+  color: whitesmoke;
+}
+
+main .btn {
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+main .btn a {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+main .btn:hover {
+  color: white;
+}
+
+main .btn:hover a {
+  color: white;
+}
+
+main .btn-new:hover {
+  background-color: green;
+}
+
+main .btn-show:hover {
+  background-color: grey;
+}
+
+main .btn-edit:hover {
+  background-color: blue;
+}
+
+main .btn-delete:hover {
+  background-color: red;
+}
+
+main table thead {
+  background-color: grey;
+  color: white;
+}
+
+main table thead th {
+  padding: 10px 0;
+}
+
+main table tbody {
+  font-size: 14px;
+}
+
+main table tbody tr td {
+  padding: 5px;
+}
+
+main table tbody tr:nth-child(odd) {
+  background-color: whitesmoke;
+}
+
+@media only screen and (max-width: 992px) {
+  main {
+    padding: 0 100px;
+  }
+
+  main .card-auth {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    padding: 0 60px;
+  }
+
+  main .card-auth {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  main {
+    padding: 0 30px;
+  }
+
+  main .card-auth {
+    width: 80%;
+  }
+}
+

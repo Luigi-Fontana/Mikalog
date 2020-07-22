@@ -1,0 +1,55 @@
+a {
+    text-decoration: none;
+    color: $color1;
+}
+
+* {
+    font-family: Nunito, sans-serif;
+    letter-spacing: 1px;
+}
+
+button {
+    border-radius: 5px;
+    border: none;
+    &:hover {
+        cursor: pointer
+    }
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    color: $color3;
+    letter-spacing: 2px;
+    padding: 50px 0;
+}
+
+h2 {
+    font-size: 25px;
+    padding-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid $color3;
+}
+
+h3 {
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+p {
+    font-size: 14px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
