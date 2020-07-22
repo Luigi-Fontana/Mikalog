@@ -51,11 +51,18 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(methodOverride('_method'))
+app.use('/articles', articleRouter)
 
-// Admin Home route
+// Admin Home Route
 app.get('/articles', checkAuthenticated, async (req, res) => {
     const articles = await Article.find().sort({ createdAt: 'desc' })
     res.render('admin/index', { articles: articles })
+})
+
+// Guest Home Route
+app.get('/', async (req, res) => {
+    const articles = await Article.find().sort({ createdAt: 'desc' })
+    res.render('guest/index', { articles: articles })
 })
 
 // Start Users Routes
@@ -91,7 +98,7 @@ app.post('/register', checkNotAuthenticated, async (req, res) => {
 
 app.delete('/logout', (req, res) => {
     req.logOut()
-    res.redirect('/login')
+    res.redirect('/')
 })
 // End users routes
 
@@ -109,7 +116,5 @@ function checkNotAuthenticated(req, res, next) {
     }
     next()
 }
-
-app.use('/articles', articleRouter)
 
 app.listen(3000)
