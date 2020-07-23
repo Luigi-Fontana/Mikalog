@@ -1,8 +1,8 @@
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production') { // Check if we are in production or development
     require('dotenv').config()
 }
 
-//Dependences
+// Packages Installed
 const express = require('express')
 const app = express()
 const bcrypt = require('bcrypt')
@@ -14,6 +14,7 @@ const articleRouter = require('./routes/articles')
 const mongoose = require('mongoose')
 const Article = require('./models/article')
 
+// Database Connection
 mongoose.connect('mongodb://localhost/mikalog',
     {
         useNewUrlParser: true,
@@ -22,6 +23,7 @@ mongoose.connect('mongodb://localhost/mikalog',
     }
 )
 
+// Authentication
 const initializePassport = require('./passport-config')
 const { initialize } = require('passport')
 initializePassport(
@@ -40,7 +42,7 @@ const users = [
 ]
 
 // Use
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs') // Set ejs engine
 app.use(express.urlencoded({ extended: false }))
 app.use(flash())
 app.use(session({
@@ -67,21 +69,21 @@ app.get('/', async (req, res) => {
 })
 
 // Start Users Routes
-app.get('/login', checkNotAuthenticated, (req, res) => {
+app.get('/login', checkNotAuthenticated, (req, res) => { // Login Page
     res.render('login')
 })
 
-app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
+app.post('/login', checkNotAuthenticated, passport.authenticate('local', { // Attempt a Login
     successRedirect: '/articles',
     failureRedirect: '/login',
     failureFlash: true
 }))
 
-app.get('/register', checkNotAuthenticated, (req, res) => {
+app.get('/register', checkNotAuthenticated, (req, res) => { // Register Page
     res.render('register')
 })
 
-app.post('/register', checkNotAuthenticated, async (req, res) => {
+app.post('/register', checkNotAuthenticated, async (req, res) => { // Attempt a Registration
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10)
         users.push({
@@ -97,7 +99,7 @@ app.post('/register', checkNotAuthenticated, async (req, res) => {
     console.log(users);
 })
 
-app.delete('/logout', (req, res) => {
+app.delete('/logout', (req, res) => { // Logout
     req.logOut()
     res.redirect('/')
 })
