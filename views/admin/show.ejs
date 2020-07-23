@@ -7,32 +7,40 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/articles">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><%= article.title %></li>
-                    </ol>
-                </nav>
+    <header>
+        <%- include('_header') %>  
+    </header>
+    <main>
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/articles">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><%= article.title %></li>
+                        </ol>
+                    </nav>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <h1 class="mb-4"><%= article.title %></h1>
-                    <div class="text-muted mb-2">
-                    <%= article.createdAt.toLocaleDateString() %>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card p-4">
+                        <h1 class="mb-4 text-center"><%= article.title %></h1>
+                        <p><%= article.description %> </p>
+                        <div class="text-muted mb-4">
+                            <%= article.createdAt.toLocaleDateString() %>
+                        </div>
+                        <div>
+                            <%- article.sanitizedHtml %>
+                        </div>
                     </div>
-                    <div>
-                        <%- article.sanitizedHtml %>
+                    <div class="mt-4">
+                        <a href="/articles" class="btn btn-secondary">Back</a>
+                        <a href="/articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
                     </div>
-                    <a href="/articles" class="btn btn-secondary">Back</a>
-                    <a href="/articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>

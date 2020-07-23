@@ -12,6 +12,7 @@ a {
 * {
   font-family: Nunito, sans-serif;
   letter-spacing: 1px;
+  transition-duration: 0.2s;
 }
 
 button {
@@ -168,13 +169,13 @@ main .card-auth .form-button button:hover {
 
 main .btn {
   padding: 5px 10px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   background-color: transparent;
 }
 
 main .btn a {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -186,41 +187,63 @@ main .btn:hover a {
   color: white;
 }
 
-main .btn-new:hover {
-  background-color: green;
-}
-
 main .btn-show:hover {
-  background-color: grey;
+  background-color: darkkhaki;
 }
 
 main .btn-edit:hover {
-  background-color: blue;
+  background-color: royalblue;
 }
 
 main .btn-delete:hover {
-  background-color: red;
+  background-color: indianred;
 }
 
-main table thead {
+main .new-row {
+  text-align: center;
+  padding: 50px 0;
+}
+
+main .new-row button {
+  padding: 10px 20px;
+  background-color: mediumseagreen;
+}
+
+main .new-row button a {
+  font-size: 25px;
+}
+
+main .new-row button:hover {
+  background-color: darkgreen;
+}
+
+main .table-row {
+  overflow-x: auto;
+}
+
+main .table-row table thead {
   background-color: grey;
   color: white;
 }
 
-main table thead th {
+main .table-row table thead th {
   padding: 10px 0;
 }
 
-main table tbody {
+main .table-row table tbody {
   font-size: 14px;
 }
 
-main table tbody tr td {
+main .table-row table tbody tr td {
   padding: 5px;
 }
 
-main table tbody tr:nth-child(odd) {
-  background-color: whitesmoke;
+main .table-row table tbody tr:nth-child(even) {
+  background-color: gainsboro;
+}
+
+main .table-row table tbody tr .small {
+  font-size: 12px;
 }
 
 @media only screen and (max-width: 992px) {

@@ -50,11 +50,11 @@ main {
     }
     .btn {
         padding: 5px 10px;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: bold;
         background-color: transparent;
         a {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
         }
         &:hover {
@@ -64,34 +64,51 @@ main {
             }
         }
     }
-    .btn-new:hover {
-        background-color: green;
-    }
     .btn-show:hover {
-        background-color: grey;
+        background-color: darkkhaki;
     }
     .btn-edit:hover {
-        background-color: blue;
+        background-color: royalblue;
     }
     .btn-delete:hover {
-        background-color: red;
+        background-color: indianred;
     }
-    table {
-        thead {
-            background-color: grey;
-            color: white;
-            th {
-                padding: 10px 0;
+    .new-row {
+        text-align: center;
+        padding: 50px 0;
+        button {
+            padding: 10px 20px;
+            background-color: mediumseagreen;
+            a {
+                font-size: 25px;
+            }
+            &:hover {
+                background-color: darkgreen;
             }
         }
-        tbody {
-            font-size: 14px;
-            tr {
-                td {
-                    padding: 5px;
+    }
+    .table-row {
+        overflow-x: auto;
+        table {
+            thead {
+                background-color: grey;
+                color: white;
+                th {
+                    padding: 10px 0;
                 }
-                &:nth-child(odd) {
-                    background-color: $color4;
+            }
+            tbody {
+                font-size: 14px;
+                tr {
+                    td {
+                        padding: 5px;
+                    }
+                    &:nth-child(even) {
+                        background-color: gainsboro;
+                    }
+                    .small {
+                        font-size: 12px;
+                    }
                 }
             }
         }

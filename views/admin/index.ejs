@@ -4,55 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mikalog | Admin Home</title>
-    <link rel="stylesheet" href="dist/css/app.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
     <header>
-        <div class="container flex">
-            <div class="header-left">
-                <a href="/"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ffiles.softicons.com%2Fdownload%2Fapplication-icons%2Forb-icons-by-deleket%2Fpng%2F300x300%2FBlogger.png&f=1&nofb=1" alt="logo"></a>
-            </div>
-            <div class="header-right">
-                <form action="/logout?_method=DELETE" method="POST">
-                    <button type="submit">Logout</button>
-                </form>
-            </div>
-        </div>
+        <%- include('_header') %>  
     </header>
     <main>
         <div class="container">
-            <div class="row">
-                <button class="btn btn-new"><a href="/articles/new">New Article</a></button>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active" aria-current="page">Home</li>
+                        </ol>
+                    </nav>
+                </div>
             </div>
             <div class="row">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>TITLE</th>
-                            <th>DATE</th>
-                            <th>DESCRIPTION</th>
-                            <th colspan="3">ACTIONS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% articles.forEach(article => { %>
+                <div class="v-50 mx-auto">
+                    <a href="/articles/new" class="btn btn-success mt-4">New Article</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="table-responsive p-3">
+                    <table class="table table-index mt-4">
+                        <thead class="table-active">
                             <tr>
-                                <td><%= article.title %></td>
-                                <td><%= article.createdAt.toLocaleDateString() %></td>
-                                <td><%= article.description %></td>
-                                <td><button class="btn btn-show"><a href="articles/<%= article.slug %>">Details</a></button></td>
-                                <td><button clasS="btn btn-edit"><a href="articles/edit/<%= article.id %>">Edit</a></button></td>
-                                <td>
-                                    <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
-                                        <div class="form-button">
-                                            <button type="submit" class="btn btn-delete">Delete</button>
-                                        </div>
-                                    </form>
-                                </td>
+                                <th class="text-center">DATE</th>
+                                <th class="text-center">TITLE</th>
+                                <th class="text-center">DESCRIPTION</th>
+                                <th colspan="3" class="text-center">ACTIONS</th>
                             </tr>
-                        <% }) %>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <% articles.forEach(article => { %>
+                                <tr>
+                                    <td class="small"><%= article.createdAt.toLocaleDateString() %></td>
+                                    <td><%= article.title %></td>
+                                    <td class="small"><%= article.description %></td>
+                                    <td><a href="articles/<%= article.slug %>" class="btn btn-outline-secondary">Details</a></td>
+                                    <td><a href="articles/edit/<%= article.id %>" class="btn btn-outline-info">Edit</a></td>
+                                    <td>
+                                        <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+                                            <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </main>
